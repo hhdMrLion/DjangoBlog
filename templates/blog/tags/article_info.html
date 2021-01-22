@@ -49,7 +49,7 @@
         {% if  isindex %}
             {{ article.body|custom_markdown|escape|truncatechars_content }}
             <p class='read-more'><a
-                    href=' {{ article.get_absolute_url }}'>Read more</a></p>
+                    href=' {{ article.get_absolute_url }}'>阅读 更多</a></p>
         {% else %}
             {{ article.body|custom_markdown }}
         {% endif %}

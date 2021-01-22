@@ -539,7 +539,9 @@ a:hover {
 .site {
     padding: 0 24px;
     padding: 0 1.714285714rem;
-    background-color: #fff;
+    /*背景设置*/
+    /*background-color: #ffffff;*/
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .site-content {

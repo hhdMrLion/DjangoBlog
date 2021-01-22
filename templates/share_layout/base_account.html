@@ -34,6 +34,26 @@
     <![endif]-->
 </head>
 
+<style>
+    body {
+        {#background: radial-gradient(200% 100% at bottom center, #7adef7, #7d8ee9, #343b7d, #1b2947);#}
+        {#background: radial-gradient(220% 105% at top center, #1b2947 10%, #343b7d 40%, #7d8ee9 65%, #7adef7);#}
+        background: radial-gradient(200% 100% at bottom center, #ffffff, #f0f0f4, #f0fcff, #d6ecf0);
+        background: radial-gradient(220% 105% at top center, #d6ecf0 10%, #f0fcff 40%, #f0f0f4 65%, #ffffff);
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+        }
+        100% {
+            transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+        }
+    }
+</style>
+
 <body>
 {% block content %}
 {% endblock %}

@@ -43,7 +43,28 @@
     {% endcompress %}
 </head>
 
+<style>
+    body {
+        {#background: radial-gradient(200% 100% at bottom center, #7adef7, #7d8ee9, #343b7d, #1b2947);#}
+        {#background: radial-gradient(220% 105% at top center, #1b2947 10%, #343b7d 40%, #7d8ee9 65%, #7adef7);#}
+        background: radial-gradient(200% 100% at bottom center, #ffffff, #f0f0f4, #f0fcff, #d6ecf0);
+        background: radial-gradient(220% 105% at top center, #d6ecf0 10%, #f0fcff 40%, #f0f0f4 65%, #ffffff);
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(0);
+        }
+        100% {
+            transform: perspective(400px) rotateZ(20deg) rotateX(-40deg) rotateY(-360deg);
+        }
+    }
+</style>
+
 <body class="home blog custom-font-enabled">
+
 <div id="page" class="hfeed site">
     <header id="masthead" class="site-header" role="banner">
         <hgroup>
@@ -71,17 +92,33 @@
     {% include 'share_layout/footer.html' %}
 </div><!-- #page -->
 
+{# 网站小助手 #}
+{#<div id="live2d-widget">#}
+{#  <canvas id="live2dcanvas" width="200" height="400"#}
+{#          style="position: fixed;opacity: 0.7;left: 0;bottom: -20px;z-index: 99999;pointer-events: none;"></canvas>#}
+{#</div>#}
+
 </body>
 <footer>
-    {% compress js %}
-        <script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.js' %}"></script>
-        <script type="text/javascript" src="{% static 'blog/js/nprogress.js' %}"></script>
-        <script src="{% static 'blog/js/blog.js' %}" type="application/javascript"></script>
-        <script src="{% static 'blog/js/navigation.js' %}" type="application/javascript"></script>
-        {% block compress_js %}
-        {% endblock %}
-    {% endcompress %}
-    {% block footer %}
+  {% compress js %}
+    <script type="text/javascript" src="{% static 'blog/js/jquery-3.1.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/nprogress.js' %}"></script>
+    <script type="text/javascript" src="{% static 'blog/js/theme-bgeffects.js' %}"></script>
+    <script src="{% static 'blog/js/blog.js' %}" type="application/javascript"></script>
+    <script src="{% static 'blog/js/navigation.js' %}" type="application/javascript"></script>
+    {% block compress_js %}
     {% endblock %}
+  {% endcompress %}
+  {% block footer %}
+  {% endblock %}
+  {# 小助手需要的js代码 #}
+{#  <script type="text/javascript" charset="utf-8" async=""#}
+{#          src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.0.min.js"></script>#}
+{#  <script type="text/javascript"#}
+{#          src="https://cdn.jsdelivr.net/npm/live2d-widget@3.0.4/lib/L2Dwidget.min.js?_=1557308476616"></script>#}
+{#  <script type="text/javascript">#}
+{#      L2Dwidget.init();#}
+{#  </script>#}
+  {# 小助手需要的js代码 #}
 </footer>
 </html>
