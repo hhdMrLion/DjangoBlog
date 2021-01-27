@@ -11,7 +11,7 @@
                         {% if comment_item.author.is_superuser %}
                    href="{{ comment_item.author.get_absolute_url }}"
                         {% else %}
-                   href="#"
+                   href="javascript:;"
                         {% endif %}
                    rel="external nofollow"
                    class="url">{{ comment_item.author.username }}
